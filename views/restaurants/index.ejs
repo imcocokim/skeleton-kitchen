@@ -2,15 +2,8 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Welcome, <%= user ? `Chef ${user.profile.name}` : "Chef" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
-  <% } %>
+  <h1>Reviewed Restaurants</h1>
+  <a href="/views/restaurants/new"><button type="submit">Add Restaurant</button></a>
   <% if (restaurants.length) { %>
     <table>
       <thead>
