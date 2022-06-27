@@ -1,8 +1,8 @@
-<%- include('./partials/html-head') %>
-<%- include('./partials/nav') %>
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? `Chef ${user.profile.name}` : "Chef" %></h1>
+  <h1>Welcome, <%= user ? `Chef ${user.profile.name}` : "Chef" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
       <img
@@ -11,6 +11,28 @@
       />
     </div>
   <% } %>
+  <% if (restaurants.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Restaurant</th>
+          <th>Location</th>
+          <th>Ratings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% restaurants.forEach(restaurant => { %>
+          <tr>
+            <td><%= restaurant.name %> </td>
+            <td><%= restaurant.location %> </td>
+            <td><%= restaurant.reviews.ratings %> </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else {%>
+    <h3>No Restaurants Have Been Added Yet</h3>
+    <% } %> 
 </main>
 
-<%- include('./partials/footer') %>
+<%- include('../partials/footer') %>
