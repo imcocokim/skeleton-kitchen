@@ -16,6 +16,11 @@ function index(req, res){
   })
 }
 
+function newRes(req, res) {
+
+}
+
 export {
   index,
+  newRes as new,
 }
