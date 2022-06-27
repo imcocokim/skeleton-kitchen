@@ -17,7 +17,13 @@ function index(req, res){
 }
 
 function newRes(req, res) {
-
+  res.render('restaurants/new', {
+    title: 'Add Restaurant'
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
 }
 
 export {

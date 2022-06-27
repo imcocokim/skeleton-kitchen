@@ -7,7 +7,7 @@ const router = Router()
 router.get('/', isLoggedIn ,restCtrl.index)
 
 // GET /restaurants/new
-rouger.get('/new', isLoggedIn, restCtrl.newRes)
+router.get('/new', isLoggedIn, restCtrl.new)
 
 export {
   router
