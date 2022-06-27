@@ -7,7 +7,6 @@ function index(req, res){
       restaurants,
       title: "Restaurants",
       user: req.user ? req.user: null
-
     })
   })
   .catch(err => {
@@ -27,6 +26,7 @@ function newRes(req, res) {
 }
 
 function create(req, res) {
+  req.body.createdBy = req.user.profile._id
   Restaurant.create(req.body)
   .then(restaurant => {
     res.redirect("/restaurants")
@@ -39,10 +39,12 @@ function create(req, res) {
 
 function show(req, res) {
   Restaurant.findById(req.params.id)
+  .populate('createdBy')
   .then(restaurant => {
     res.render('restaurants/show', {
       restaurant,
-      title: 'Restaurant Detail'
+      title: 'Restaurant Detail',
+      
     })
   })
   .catch(err => {

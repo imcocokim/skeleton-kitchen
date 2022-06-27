@@ -2,7 +2,13 @@
 <%- include('../partials/nav') %>
 
 <main>
-<h1><%= restaurant.name %> </h1>
+<h1><%= restaurant.name %>
+<% if (restaurant.createdBy.equals(user?.profile._id)) { %>
+  <form action="/restaurants/<%= restaurant._id %>/edit" method="GET">
+  <button type="submit" class="btn">Edit</button></form>
+<% } %>
+</h1>
+
 <h2><%= restaurant.location %> </h2>
 <h2><%= restaurant.cuisine %> </h2>
 <section>
