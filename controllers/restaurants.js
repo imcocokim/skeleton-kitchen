@@ -37,8 +37,13 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+
+}
+
 export {
   index,
   newRes as new,
-  create
+  create,
+  show,
 }
