@@ -1,9 +1,10 @@
 import { Router } from 'express'
 import * as restCtrl from '../controllers/restaurants.js'
+import { isLoggedIn } from '../middleware/middleware.js'
 const router = Router()
 
 // GET /restaurants
-router.get('/', restCtrl.index)
+router.get('/', isLoggedIn ,restCtrl.index)
 
 export {
   router
