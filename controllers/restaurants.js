@@ -26,7 +26,19 @@ function newRes(req, res) {
   })
 }
 
+function create(req, res) {
+  Restaurant.create(req.body)
+  .then(restaurant => {
+    res.redirect('/restaurants')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/restaurants')
+  })
+}
+
 export {
   index,
   newRes as new,
+  create
 }

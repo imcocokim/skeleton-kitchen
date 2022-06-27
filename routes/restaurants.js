@@ -9,6 +9,9 @@ router.get('/', isLoggedIn ,restCtrl.index)
 // GET /restaurants/new
 router.get('/new', isLoggedIn, restCtrl.new)
 
+// POST /restaurants
+router.post('/restaurants', isLoggedIn, restCtrl.create)
+
 export {
   router
 }
