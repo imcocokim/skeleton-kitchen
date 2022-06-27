@@ -10,10 +10,10 @@ router.get('/', isLoggedIn ,restCtrl.index)
 router.get('/new', isLoggedIn, restCtrl.new)
 
 // GET /restaurants/:id
-router.get('/restaurants/:id', isLoggedIn, restCtrl.show)
+router.get('/:id', isLoggedIn, restCtrl.show)
 
 // POST /restaurants
-router.post('/restaurants', isLoggedIn, restCtrl.create)
+router.post('/', isLoggedIn, restCtrl.create)
 
 export {
   router

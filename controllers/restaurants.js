@@ -29,7 +29,7 @@ function newRes(req, res) {
 function create(req, res) {
   Restaurant.create(req.body)
   .then(restaurant => {
-    res.redirect('/restaurants')
+    res.redirect("/restaurants")
   })
   .catch(err => {
     console.log(err)
@@ -38,7 +38,17 @@ function create(req, res) {
 }
 
 function show(req, res) {
-
+  Restaurant.findById(req.params.id)
+  .then(restaurant => {
+    res.render('restaurants/show', {
+      restaurant,
+      title: 'Restaurant Detail'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/restaurants')
+  })
 }
 
 export {
