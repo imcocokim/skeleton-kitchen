@@ -16,7 +16,7 @@
       <tbody>
         <% restaurants.forEach(restaurant => { %>
           <tr>
-            <td><%= restaurant.name %> </td>
+            <td><a href="/restaurants/<%= restaurant._id %>"><%= restaurant.name %></a></td>
             <td><%= restaurant.location %> </td>
           </tr>
         <% }) %>
