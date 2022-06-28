@@ -18,6 +18,9 @@ router.get('/:id/edit', isLoggedIn, restCtrl.edit)
 // POST /restaurants
 router.post('/', isLoggedIn, restCtrl.create)
 
+// PUT /restaurants/:id
+router.put('/:id', isLoggedIn, restCtrl.update)
+
 export {
   router
 }
