@@ -12,6 +12,9 @@ router.get('/new', isLoggedIn, restCtrl.new)
 // GET /restaurants/:id
 router.get('/:id', isLoggedIn, restCtrl.show)
 
+// GET /restaurants/:id/edit
+router.get('/:id/edit', isLoggedIn, restCtrl.edit)
+
 // POST /restaurants
 router.post('/', isLoggedIn, restCtrl.create)
 

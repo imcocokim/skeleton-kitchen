@@ -44,7 +44,20 @@ function show(req, res) {
     res.render('restaurants/show', {
       restaurant,
       title: 'Restaurant Detail',
-      
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/restaurants')
+  })
+}
+
+function edit(req, res) {
+  Restaurant.findById(req.params.id)
+  .then(restaurant => {
+    res.render('restaurants/edit', {
+      title: "Edit Restaurant",
+      restaurant
     })
   })
   .catch(err => {
@@ -58,4 +71,5 @@ export {
   newRes as new,
   create,
   show,
+  edit
 }

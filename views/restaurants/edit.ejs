@@ -1,0 +1,20 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>Edit Restaurant</h1>
+  <a href="/restaurants/<%= restaurant._id %> ">
+    <button>Cancel</button>
+  </a>
+<form id="new-form" action="/restaurants" method="POST">
+  <label for="restaurant-input">Restaurant Name:</label>
+  <input type="text" name="name" id="restaurant-input" autocomplete="off" value="<%= restaurant.name %>">
+  <label for="location-input">Location:</label>
+  <input type="text" name="location" id="location-input" autocomplete="off" value="<%= restaurant.location%> ">
+  <label for="cuisine-input">Cuisine:</label>
+  <input type="text" name="cuisine" id="cuisine-input" autocomplete="off" value="<%= restaurant.cuisine %>">
+  <button type="submit">Add Restaurant</button>
+</form>
+</main>
+
+<%- include('../partials/footer') %>
