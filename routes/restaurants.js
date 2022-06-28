@@ -21,6 +21,9 @@ router.post('/', isLoggedIn, restCtrl.create)
 // PUT /restaurants/:id
 router.put('/:id', isLoggedIn, restCtrl.update)
 
+// DELETE /restaurants/:id
+router.delete('/:id', isLoggedIn, restCtrl.delete)
+
 export {
   router
 }
