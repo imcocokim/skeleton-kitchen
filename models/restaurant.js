@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const restaurantSchema = new Schema({
-  name: String,
+  name: {type: String, unique: true},
   location: String,
   cuisine: String,
   reviews: {type: Schema.Types.ObjectId, ref: "Reviews"},

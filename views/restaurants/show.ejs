@@ -14,7 +14,23 @@
 <h2><%= restaurant.location %> </h2>
 <h2><%= restaurant.cuisine %> </h2>
 <section>
-  
+  <form 
+  action="/restaurants/<%= restaurant._id %>/reviews"
+  id="add-review-form"
+  method="POST"
+  >
+  <label for="content-textarea">Review</label>
+  <textarea name="content" id="content-textarea"></textarea>
+  <label for="rating-select">Rating</label>
+  <select name="rating" id="rating-select">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5" selected>5</option>
+  </select>
+  <button type="submit">Add Review</button>
+  </form>
 </section>
 </main>
 
