@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import * as restCtrl from '../controllers/restaurants.js'
+import * as revCrtl from '../controllers/reviews.js'
 import { isLoggedIn } from '../middleware/middleware.js'
 const router = Router()
 
@@ -17,6 +18,9 @@ router.get('/:id/edit', isLoggedIn, restCtrl.edit)
 
 // POST /restaurants
 router.post('/', isLoggedIn, restCtrl.create)
+
+// POST /restaurants/:id/reviews
+router.post('/:id/reviews', restCtrl.createRev)
 
 // PUT /restaurants/:id
 router.put('/:id', isLoggedIn, restCtrl.update)

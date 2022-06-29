@@ -1,4 +1,5 @@
 import { Restaurant } from '../models/restaurant.js'
+import { Review } from '../models/review.js'
 
 function index(req, res){
   Restaurant.find({})
@@ -40,7 +41,9 @@ function create(req, res) {
 function show(req, res) {
   Restaurant.findById(req.params.id)
   .populate('createdBy')
+  .populate('reviews')
   .then(restaurant => {
+    console.log(restaurant)
     res.render('restaurants/show', {
       restaurant,
       title: 'Restaurant Detail',
@@ -88,6 +91,25 @@ function deleteRes(req, res){
   })
 }
 
+function createRev(req, res) {
+  Restaurant.findById(req.params.id)
+  .then(restaurant => {
+    console.log(restaurant)
+    req.body.restaurant = restaurant._id
+    Review.create(req.body)
+    .then(review => {
+      restaurant.reviews.push(review)
+      restaurant.save()
+      .then(() => {
+        res.redirect(`/restaurants/${restaurant._id}`)
+      })
+
+    })
+
+
+  })
+}
+
 export {
   index,
   newRes as new,
@@ -95,5 +117,6 @@ export {
   show,
   edit,
   update,
-  deleteRes as delete
+  deleteRes as delete,
+  createRev
 }

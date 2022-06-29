@@ -22,7 +22,7 @@
   <label for="content-textarea">Review</label>
   <textarea name="content" id="content-textarea"></textarea>
   <label for="rating-select">Rating</label>
-  <select name="rating" id="rating-select">
+  <select name="ratings" id="rating-select">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -31,6 +31,18 @@
   </select>
   <button type="submit">Add Review</button>
   </form>
+  <% if (restaurant.reviews.length) { %>
+    <% restaurant.reviews.forEach(review => { %>
+      <div>
+        <%= review.createdAt.toString().slice(0, 10)%> 
+        <%= restaurant.createdBy.name%> 
+        <%= review.ratings %> 
+        <%= review.content %>
+      </div>
+      <% }) %>
+      <% } else { %>
+        <h2>No Reviews Yet</h2>
+        <% } %>
 </section>
 </main>
 

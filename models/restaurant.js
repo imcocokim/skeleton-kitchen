@@ -6,7 +6,7 @@ const restaurantSchema = new Schema({
   name: {type: String, unique: true},
   location: String,
   cuisine: String,
-  reviews: {type: Schema.Types.ObjectId, ref: "Reviews"},
+  reviews: [{type: Schema.Types.ObjectId, ref: "Review"}],
   createdBy: {type: Schema.Types.ObjectId, ref: "Profile"}
 }, {
   timestamps: true
