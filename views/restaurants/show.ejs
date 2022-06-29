@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <main>
-<h1><%= restaurant.name %></h1>
+  <% let average %> 
 <% if (restaurant.createdBy.equals(user?.profile._id)) { %>
   <form action="/restaurants/<%= restaurant._id %>/edit" method="GET">
   <button type="submit" class="btn">Edit</button></form>
@@ -32,18 +32,25 @@
   <button type="submit">Add Review</button>
   </form>
   <% if (restaurant.reviews.length) { %>
+    <% let total = 0 %> 
     <% restaurant.reviews.forEach(review => { %>
       <div>
+        <% total += review.ratings %> 
         <%= review.createdAt.toString().slice(0, 10)%> 
         <%= restaurant.createdBy.name%> 
         <%= review.ratings %> 
         <%= review.content %>
       </div>
       <% }) %>
+      <% average = (total/restaurant.reviews.length).toFixed(1) %> 
       <% } else { %>
         <h2>No Reviews Yet</h2>
         <% } %>
+        <% if (user) { %>
+          <form action=""></form>
+        <% } %> 
 </section>
+<h1 id="restaurant-name"><%= restaurant.name %> <%= average %></h1>
 </main>
 
 <%- include('../partials/footer') %>

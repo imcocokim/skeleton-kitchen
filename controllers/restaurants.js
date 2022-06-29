@@ -3,12 +3,14 @@ import { Review } from '../models/review.js'
 
 function index(req, res){
   Restaurant.find({})
+  .populate('reviews')
   .then(restaurants => {
     res.render('restaurants/index', {
       restaurants,
       title: "Restaurants",
       user: req.user ? req.user: null
     })
+
   })
   .catch(err => {
     console.log(err)
@@ -43,7 +45,6 @@ function show(req, res) {
   .populate('createdBy')
   .populate('reviews')
   .then(restaurant => {
-    console.log(restaurant)
     res.render('restaurants/show', {
       restaurant,
       title: 'Restaurant Detail',

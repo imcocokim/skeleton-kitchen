@@ -18,7 +18,14 @@
           <tr>
             <td><a href="/restaurants/<%= restaurant._id %>"><%= restaurant.name %></a></td>
             <td><%= restaurant.location %> </td>
-            <td></td>
+
+            <% let total = 0 %> 
+            <% restaurant.reviews.forEach(review => { %>
+              <% total += review.ratings %> 
+              <%}) %> 
+              <td><%= (total/restaurant.reviews.length).toFixed(1) %></td>
+            
+
           </tr>
         <% }) %>
       </tbody>
