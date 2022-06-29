@@ -28,6 +28,9 @@ router.put('/:id', isLoggedIn, restCtrl.update)
 // DELETE /restaurants/:id
 router.delete('/:id', isLoggedIn, restCtrl.delete)
 
+// DELETE /restaurants/:id/reviews/:id
+router.delete('/:id/reviews/:id', isLoggedIn, restCtrl.deleteRev)
+
 export {
   router
 }

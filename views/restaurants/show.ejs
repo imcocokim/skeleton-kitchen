@@ -35,11 +35,14 @@
     <% let total = 0 %> 
     <% restaurant.reviews.forEach(review => { %>
       <div>
+        <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
         <% total += review.ratings %> 
         <%= review.createdAt.toString().slice(0, 10)%> 
         <%= restaurant.createdBy.name%> 
         <%= review.ratings %> 
         <%= review.content %>
+        <button>Delete</button>
+      </form>
       </div>
       <% }) %>
       <% average = (total/restaurant.reviews.length).toFixed(1) %> 

@@ -104,10 +104,19 @@ function createRev(req, res) {
       .then(() => {
         res.redirect(`/restaurants/${restaurant._id}`)
       })
-
     })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/restaurants/${restaurant._id}`)
+    })
+  })
+}
 
-
+function deleteRev(req, res){
+  Review.findByIdAndDelete(req.params.id)
+  .populate('restaurant')
+  .then(review => {
+    res.redirect(`/restaurants/${review.restaurant._id}`)
   })
 }
 
@@ -119,5 +128,6 @@ export {
   edit,
   update,
   deleteRes as delete,
-  createRev
+  createRev, 
+  deleteRev
 }
