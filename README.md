@@ -17,6 +17,11 @@ Users are able to:
 - edit their profile
 - view other profiles, restaurants, reviews
 
+## ERD
+![alt text](./public/images/ERD.png)
+
+## Wire Frame
+![alt text](./public/images/Wireframe.png)
 ## Web Preview
 (Screenshot of website will be here)
 
