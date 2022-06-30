@@ -1,4 +1,5 @@
 # Skeletons in the Kitchen
+## Getting Started
 
 
 - [Click here to get to the Deployed Link](https://skeleton-kitchen.herokuapp.com/)
