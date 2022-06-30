@@ -11,6 +11,7 @@
   <button type="submit" class="btn">Delete</button></form>
   
 <% } %>
+<h2><%= restaurant.name %> </h2>
 <h2><%= restaurant.location %> </h2>
 <h2><%= restaurant.cuisine %> </h2>
 <section>
@@ -39,9 +40,11 @@
         <%= review.createdAt.toString().slice(0, 10)%> 
         <%= restaurant.createdBy.name%> 
         <%= review.ratings %>
+        <% if(user.profile._id.equals(review.createdBy._id)) { %> 
         <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="GET">
           <button>Delete</button>
         </form>
+        <% } %> 
           
           <%= review.content %>
       </div>

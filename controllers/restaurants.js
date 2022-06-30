@@ -42,12 +42,12 @@ function create(req, res) {
 function show(req, res) {
   Restaurant.findById(req.params.id)
   .populate('createdBy')
-  .populate('reviews')
+  .populate({
+    path: 'reviews', 
+    poulate: {path: 'createdBy'}
+  })
   .then(restaurant => {
-    const isSelf = restaurant.createdBy._id.equals(req.user._id)
-    console.log(restaurant)
-    console.log('********', req.user._id)
-    console.log("**********", restaurant.createdBy._id)
+    const isSelf = restaurant.createdBy._id.equals(req.user.profile._id)
     res.render('restaurants/show', {
       restaurant,
       title: 'Restaurant Detail',
@@ -100,6 +100,7 @@ function createRev(req, res) {
   Restaurant.findById(req.params.id)
   .then(restaurant => {
     req.body.restaurant = restaurant._id
+    req.body.createdBy = req.user.profile._id
     Review.create(req.body)
     .then(review => {
       restaurant.reviews.push(review)
