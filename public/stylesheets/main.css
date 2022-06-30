@@ -1,0 +1,52 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after {
+  /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default but can be overridden as needed */
+  box-sizing: inherit;
+}
+
+/* resets font size to be 62.5% of the user preference - in most browser configurations this will be 10px */
+:root {
+  font-size: 62.5%;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 50px;
+  margin-top: 5px;
+  font-family: var(--display);
+  color:var(--brick);
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 45px;
+  margin: 40px 0 5px;
+  font-family: var(--display);
+  color: var(--brick);
+}
+
+main {
+  padding: 40px;
+}
+
+h3 {
+  margin-top: 0;
+  padding: 30px;
+  font-size: 30px;
+  color:  var(--beige);
+}
+

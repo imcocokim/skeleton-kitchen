@@ -1,22 +1,25 @@
-  <% if (!user) { %>
+<% if (!user) { %>
     <link rel="stylesheet" href="/stylesheets/siwg.css">
   <% } %>
 </head>
 <body>
   <nav>
-    Skeletons in the Kitchen
-    <a href="/">Home</a>
-    <a href="/restaurants">Restaurants</a>
-    <a href="/cooks">Cooks</a>
-    <% if (user) { %>
-      <a href="/auth/logout">
-        <button type="submit">Logout</button>
-      </a>
-    <% } else { %>
-      <a href="/auth/google" class="siwg-link">
-        <button type="submit" class="siwg">
-          <img id="siwg-image" alt="Sign in with Google" />
-        </button>
-      </a>
-    <% } %>
+    <ul>
+      <li id="nav-title">Skeletons in the Kitchen</li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/restaurants">Restaurants</a></li>
+      <li><a href="/cooks">Cooks</a></li>
+      <li><% if (user) { %>
+        <a href="/auth/logout">
+          Logout
+        </a>
+      <% } else { %>
+        <a href="/auth/google" class="siwg-link">
+          <button type="submit" class="siwg">
+            <img id="siwg-image" alt="Sign in with Google" />
+          </button>
+        </a>
+      <% } %>
+    </li>
+  </ul>
   </nav>

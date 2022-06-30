@@ -1,0 +1,21 @@
+body {
+  font-size: 18px;
+}
+
+div {
+  display: block;
+  margin: 10px;
+}
+
+input {
+  float: right;
+  border-radius: 5px;
+}
+
+button {
+  float: right
+}
+
+#cancel-btn {
+  margin-bottom: 20px;
+}

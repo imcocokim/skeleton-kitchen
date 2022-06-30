@@ -1,19 +1,27 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/restaurants/index.css">
+<link rel="stylesheet" href="/stylesheets/restaurants/new.css">
 <%- include('../partials/nav') %>
 
 <main>
   <h1>Add Restaurant</h1>
   <a href="/restaurants">
-    <button>Cancel</button>
+    <button id="cancel-btn">Cancel</button>
   </a>
-<form id="new-form" action="/restaurants" method="POST">
-  <label for="restaurant-input">Restaurant Name:</label>
-  <input type="text" name="name" id="restaurant-input" autocomplete="off">
-  <label for="location-input">Location:</label>
-  <input type="text" name="location" id="location-input" autocomplete="off">
-  <label for="cuisine-input">Cuisine:</label>
-  <input type="text" name="cuisine" id="cuisine-input" autocomplete="off">
-  <button type="submit">Add Restaurant</button>
+  <form id="new-form" action="/restaurants" method="POST">
+    <div>
+      <label for="restaurant-input">Restaurant Name:</label>
+      <input type="text" name="name" id="restaurant-input" autocomplete="off">
+    </div>
+    <div>
+    <label for="location-input">Location:</label>
+    <input type="text" name="location" id="location-input" autocomplete="off">
+    </div>
+    <div>
+    <label for="cuisine-input">Cuisine:</label>
+    <input type="text" name="cuisine" id="cuisine-input" autocomplete="off">
+    </div>
+    <div><button type="submit">Add Restaurant</button></div>
 </form>
 </main>
 

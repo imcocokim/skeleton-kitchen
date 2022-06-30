@@ -25,6 +25,21 @@
     <% } %>  
   <h2><%= profile.location %> </h2>
   <h2><%= profile.years %> </h2>
+  <div id="restaurant-list">
+    <% restaurants.forEach(restaurant => { %>
+      <%= restaurant.createdAt.toString().slice(0, 10) %> 
+      <%= restaurant.name %> 
+      <%= restaurant.location %> 
+    <% }) %> 
+  </div>
+  <div id="review-list">
+    <% reviews.forEach(review => { %>
+      <%= review.createdAt.toString().slice(0, 10) %> 
+      <%= review.content %> 
+      <%= review.ratings %> 
+    <% }) %> 
+  </div>
+
 
 </main>
 

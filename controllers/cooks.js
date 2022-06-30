@@ -19,12 +19,19 @@ function index(req, res) {
 function show(req, res){
   Profile.findById(req.params.id)
   .then(profile => {
-    const isSelf = profile._id.equals(req.user.profile._id)
-    Restaurant.find()
-    res.render('cooks/show', {
-      profile,
-      title: `${profile.name}`,
-      isSelf
+    Restaurant.find({createdBy: profile._id})
+    .then(restaurants => {
+      Review.find({createdBy: profile._id})
+      .then(reviews => {
+        const isSelf = profile._id.equals(req.user.profile._id)
+        res.render('cooks/show', {
+          profile,
+          title: `${profile.name}`,
+          isSelf,
+          reviews,
+          restaurants
+        })
+      })
     })
   })
   .catch(err => {
