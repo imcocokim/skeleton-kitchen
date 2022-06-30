@@ -7,13 +7,13 @@
 
 
 
-Skeletons in the Kitchen is where cooks can go to make honest reviews of what their working environment is like.  Users add and delete review.  There are three sections:
+Skeletons in the Kitchen is where cooks can go to make honest reviews of what their working environment is like.  There are three sections:
 - Home
 - Restaurants
 - Cook
 
 Users are able to:
-- create, edit, and delete restaurants they have created
+- create, edit, and delete restaurants they added
 - create and delete their own reviews
 - edit their profile
 - view other profiles, restaurants, reviews
@@ -23,7 +23,7 @@ Users are able to:
 ![alt text](./public/images/ERD.png)
 
 ## Wire Frame
-[Click here to get a closer look to the Wireframe](https://whimsical.com/skeletons-in-the-walk-in-Ewbn6DYpSQcEEc8x7yEZNw)
+### [Click here to get a closer look to the Wireframe](https://whimsical.com/skeletons-in-the-walk-in-Ewbn6DYpSQcEEc8x7yEZNw)
 ![alt text](./public/images/Wireframe.png)
 ## Web Preview
 (Screenshot of website will be here)
