@@ -10,6 +10,8 @@ router.get('/', isLoggedIn, cookCtrl.index)
 // GET /cooks/:id
 router.get('/:id', isLoggedIn, cookCtrl.show)
 
+// GET /cooks/:id/edit
+router.get('/:id/edit', isLoggedIn, cookCtrl.edit)
 
 export {
   router

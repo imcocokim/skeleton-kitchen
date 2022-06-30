@@ -1,3 +1,4 @@
+import { Cookie } from 'express-session'
 import { Profile } from '../models/profile.js'
 
 function index(req, res) {
@@ -30,9 +31,19 @@ function show(req, res){
   })
 }
 
+function edit(req, res){
+  Profile.findById(req.params.id)
+  .then(profile => {
+    res.render('cooks/edit', {
+      title: "Edit Profile",
+      profile
+    })
+  })
+}
 
 export {
   index,
   show,
+  edit,
 
 }
