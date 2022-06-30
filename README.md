@@ -32,6 +32,6 @@ Users are able to:
 - ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 ## Icebox
-- Make users anonymous
-- Have multiple ratings
-- Edit their own review
+- [ ] Make users anonymous
+- [ ] Have multiple ratings
+- [ ] Edit their own review
