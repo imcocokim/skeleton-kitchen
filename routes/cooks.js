@@ -8,7 +8,8 @@ const router = Router()
 router.get('/', isLoggedIn, cookCtrl.index)
 
 // GET /cooks/:id
-router.get('/:id', cookCtrl.show)
+router.get('/:id', isLoggedIn, cookCtrl.show)
+
 
 export {
   router

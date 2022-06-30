@@ -30,7 +30,9 @@ function show(req, res){
   })
 }
 
+
 export {
   index,
   show,
+
 }

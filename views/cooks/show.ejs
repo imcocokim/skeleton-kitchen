@@ -13,7 +13,12 @@
       alt="placeholder avatar"
       >
       <% } %>
-  <h1><%= profile.name %> </h1>
+  <h1><%= profile.name %></h1>
+  <% if (isSelf) {%>
+    <form action="">
+      <button>Edit</button>
+    </form>
+    <% } %>  
   <h2><%= profile.location %> </h2>
   <h2><%= profile.years %> </h2>
 
