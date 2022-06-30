@@ -44,6 +44,7 @@ function show(req, res) {
   .populate('createdBy')
   .populate('reviews')
   .then(restaurant => {
+    console.log("*************", restaurant)
     res.render('restaurants/show', {
       restaurant,
       title: 'Restaurant Detail',

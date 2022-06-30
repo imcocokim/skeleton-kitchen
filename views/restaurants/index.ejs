@@ -19,11 +19,17 @@
             <td><a href="/restaurants/<%= restaurant._id %>"><%= restaurant.name %></a></td>
             <td><%= restaurant.location %> </td>
 
-            <% let total = 0 %> 
-            <% restaurant.reviews.forEach(review => { %>
-              <% total += review.ratings %> 
-              <%}) %> 
-              <td><%= (total/restaurant.reviews.length).toFixed(1) %></td>
+            <% if (restaurant.reviews.length) { %>
+              <% let total = 0 %> 
+              <% restaurant.reviews.forEach(review => { %>
+                <% total += review.ratings %> 
+                <%}) %> 
+                <td><%= (total/restaurant.reviews.length).toFixed(1) %></td>
+            <% } else { %>
+              <td>No Ratings Yet</td>
+
+            <% } %> 
+
             
 
           </tr>

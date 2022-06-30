@@ -3,14 +3,14 @@
 
 <main>
   <% let average %> 
-<%# if (restaurant.createdBy.equals(user?.profile._id)) { %>
+<% if (restaurant.createdBy.equals(user?.profile._id)) { %>
   <form action="/restaurants/<%= restaurant._id %>/edit" method="GET">
   <button type="submit" class="btn">Edit</button></form>
 
   <form action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
   <button type="submit" class="btn">Delete</button></form>
   
-<%# } %>
+<% } %>
 <h2><%= restaurant.location %> </h2>
 <h2><%= restaurant.cuisine %> </h2>
 <section>
