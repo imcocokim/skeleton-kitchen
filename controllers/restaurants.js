@@ -10,7 +10,6 @@ function index(req, res){
       title: "Restaurants",
       user: req.user ? req.user: null
     })
-
   })
   .catch(err => {
     console.log(err)
@@ -95,7 +94,6 @@ function deleteRes(req, res){
 function createRev(req, res) {
   Restaurant.findById(req.params.id)
   .then(restaurant => {
-    console.log(restaurant)
     req.body.restaurant = restaurant._id
     Review.create(req.body)
     .then(review => {
@@ -120,6 +118,17 @@ function deleteRev(req, res){
   })
 }
 
+// function editRev(req, res) {
+//   // Find the review by ID
+//   Review.findById(req.params.id)
+//   // push inside of the form
+//   .then(review => {
+//     review.content.push(req.body)
+//   })
+//   // change the button to update review
+//   // update the review
+// }
+
 export {
   index,
   newRes as new,
@@ -129,5 +138,6 @@ export {
   update,
   deleteRes as delete,
   createRev, 
-  deleteRev
+  deleteRev,
+  // editRev
 }

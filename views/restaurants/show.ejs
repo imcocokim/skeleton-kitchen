@@ -39,7 +39,7 @@
         <%= review.createdAt.toString().slice(0, 10)%> 
         <%= restaurant.createdBy.name%> 
         <%= review.ratings %>
-        <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>/edit" method="GET">
+        <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>" method="GET">
           <button>Edit</button>
         </form>
         <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="GET">
