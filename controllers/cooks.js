@@ -15,7 +15,17 @@ function index(req, res) {
 }
 
 function show(req, res){
-  console.log("***********")
+  Profile.findById(req.params.id)
+  .then(profile => {
+    res.render('cooks/show', {
+      profile,
+      title: `${profile.name}`
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/cooks')
+  })
 }
 
 export {
