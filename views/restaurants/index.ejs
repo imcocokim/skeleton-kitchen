@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Reviewed Restaurants</h1>
+  <h1>Restaurants</h1>
   <a href="/restaurants/new"><button type="submit">Add Restaurant</button></a>
   <% if (restaurants.length) { %>
     <table>
@@ -27,11 +27,7 @@
                 <td><%= (total/restaurant.reviews.length).toFixed(1) %></td>
             <% } else { %>
               <td>No Ratings Yet</td>
-
             <% } %> 
-
-            
-
           </tr>
         <% }) %>
       </tbody>

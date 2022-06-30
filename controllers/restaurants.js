@@ -44,10 +44,14 @@ function show(req, res) {
   .populate('createdBy')
   .populate('reviews')
   .then(restaurant => {
-    console.log("*************", restaurant)
+    const isSelf = restaurant.createdBy._id.equals(req.user._id)
+    console.log(restaurant)
+    console.log('********', req.user._id)
+    console.log("**********", restaurant.createdBy._id)
     res.render('restaurants/show', {
       restaurant,
       title: 'Restaurant Detail',
+      isSelf
     })
   })
   .catch(err => {

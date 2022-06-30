@@ -3,7 +3,7 @@
 
 <main>
   <% let average %> 
-<% if (restaurant.createdBy.equals(user?.profile._id)) { %>
+<% if (isSelf) { %>
   <form action="/restaurants/<%= restaurant._id %>/edit" method="GET">
   <button type="submit" class="btn">Edit</button></form>
 
@@ -39,9 +39,6 @@
         <%= review.createdAt.toString().slice(0, 10)%> 
         <%= restaurant.createdBy.name%> 
         <%= review.ratings %>
-        <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>" method="GET">
-          <button>Edit</button>
-        </form>
         <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="GET">
           <button>Delete</button>
         </form>
