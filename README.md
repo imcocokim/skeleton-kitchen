@@ -39,7 +39,7 @@ Users are able to:
 - ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 - ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-## Icebox
+## Next Steps
 - [ ] Make users anonymous
 - [ ] Have multiple ratings
 - [ ] Edit their own review
