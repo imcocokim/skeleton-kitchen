@@ -1,10 +1,10 @@
 # Skeletons in the Kitchen
 
 
-- [Deployed Link](https://skeleton-kitchen.herokuapp.com/)
-- [Trello](https://trello.com/b/Yt1ZCW6c/skeletons-in-the-kitchen)
-- [Wireframe](https://whimsical.com/skeletons-in-the-walk-in-Ewbn6DYpSQcEEc8x7yEZNw)
-- [ERD](https://whimsical.com/sitk-erd-GfxtLHQjiX2bdFxRaCvMyJ)
+- [Click here to get to the Deployed Link](https://skeleton-kitchen.herokuapp.com/)
+- [Click here to get a closer look to Trello](https://trello.com/b/Yt1ZCW6c/skeletons-in-the-kitchen)
+
+
 
 Skeletons in the Kitchen is where cooks can go to make honest reviews of what their working environment is like.  Users add and delete review.  There are three sections:
 - Home
@@ -18,9 +18,11 @@ Users are able to:
 - view other profiles, restaurants, reviews
 
 ## ERD
+### [Click here to get a closer look to the ERD](https://whimsical.com/sitk-erd-GfxtLHQjiX2bdFxRaCvMyJ)
 ![alt text](./public/images/ERD.png)
 
 ## Wire Frame
+[Click here to get a closer look to the Wireframe](https://whimsical.com/skeletons-in-the-walk-in-Ewbn6DYpSQcEEc8x7yEZNw)
 ![alt text](./public/images/Wireframe.png)
 ## Web Preview
 (Screenshot of website will be here)
