@@ -39,11 +39,26 @@ function edit(req, res){
       profile
     })
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/cooks')
+  })
+}
+
+function update(req, res){
+  Profile.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(profile => {
+    res.redirect(`/cooks/${profile._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/cooks')
+  })
 }
 
 export {
   index,
   show,
   edit,
-
+  update
 }

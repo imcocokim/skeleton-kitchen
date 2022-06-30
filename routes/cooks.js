@@ -13,6 +13,9 @@ router.get('/:id', isLoggedIn, cookCtrl.show)
 // GET /cooks/:id/edit
 router.get('/:id/edit', isLoggedIn, cookCtrl.edit)
 
+// PUT /cooks/:id
+router.put('/:id', isLoggedIn, cookCtrl.update)
+
 export {
   router
 }
