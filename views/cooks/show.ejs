@@ -2,23 +2,20 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>All Cooks</h1>
-  <% profiles.forEach(profile => { %>
-    <% if (profile.avatar) { %>
+  <% if (profile.avatar) { %>
+    <img 
+    src="<%= profile.avatar %>" 
+    alt="<%= profile.name %>'s profile"
+    />
+    <% } else { %>
       <img 
-      src="<%= profile.avatar %>" 
-      alt="<%= profile.name %>'s profile"
-      />
-      <% } else { %>
-        <img 
-        src="/images/user.png" 
-        alt="placeholder avatar"
-        >
-        <% } %>
-        <a href="/cooks/<%=profile._id %>"><%= profile.name %></a>
-        <%= profile.location %>
-        <%= profile.years %>  
-  <% }) %>
+      src="/images/user.png" 
+      alt="placeholder avatar"
+      >
+      <% } %>
+  <h1><%= profile.name %> </h1>
+  <h2><%= profile.location %> </h2>
+  <h2><%= profile.years %> </h2>
 
 </main>
 

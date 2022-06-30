@@ -17,9 +17,11 @@ function index(req, res) {
 function show(req, res){
   Profile.findById(req.params.id)
   .then(profile => {
+    const isSelf = profile._id.equals(req.user.profile._id)
     res.render('cooks/show', {
       profile,
-      title: `${profile.name}`
+      title: `${profile.name}`,
+      isSelf
     })
   })
   .catch(err => {
