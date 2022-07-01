@@ -22,47 +22,48 @@
 <h2 id="res-loc"><%= restaurant.location %> </h2>
 <h2 id="res-cuisine"><%= restaurant.cuisine %> </h2>
 <section>
-  <form 
-  action="/restaurants/<%= restaurant._id %>/reviews"
-  id="add-review-form"
-  method="POST"
-  >
-  <label for="content-textarea">Review</label>
-  <textarea name="content" id="content-textarea"></textarea>
-  <label for="rating-select">Rating</label>
-  <select name="ratings" id="rating-select">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5" selected>5</option>
-  </select>
-  <button type="submit">Add Review</button>
-  </form>
-  <% if (restaurant.reviews.length) { %>
-    <% let total = 0 %> 
-    <% restaurant.reviews.forEach(review => { %>
-      <div>
-        <% total += review.ratings %> 
-        <%= review.createdAt.toString().slice(0, 10)%> 
-        <%= restaurant.createdBy.name%> 
-        <%= review.ratings %>
-        <% if(user.profile._id.equals(review.createdBy._id)) { %> 
-        <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="GET">
-          <button>Delete</button>
-        </form>
-        <% } %> 
-          
-          <%= review.content %>
-      </div>
-      <% }) %>
-      <% average = (total/restaurant.reviews.length).toFixed(1) %> 
-      <% } else { %>
-        <h2>No Reviews Yet</h2>
-        <% } %>
-        <% if (user) { %>
-          <form action=""></form>
-        <% } %> 
+  <div class="container">
+    <div class="review-box">
+      <form 
+      action="/restaurants/<%= restaurant._id %>/reviews"
+      id="add-review-form"
+      method="POST"
+      >
+      <label for="content-textarea">Review:</label>
+      <textarea name="content" id="content-textarea"></textarea>
+      <label for="rating-select">Rating:</label>
+      <select name="ratings" id="rating-select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+      </select>
+      <button type="submit" id="add-rev-btn">Add Review</button>
+      </form>
+    </div>
+    <div class="reviews">
+      <% if (restaurant.reviews.length) { %>
+        <% let total = 0 %> 
+        <% restaurant.reviews.forEach(review => { %>
+          <% total += review.ratings %> 
+          <% if(user.profile._id.equals(review.createdBy._id)) { %> 
+            <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+              <button id="delete-btn">Delete</button>
+            </form>
+            <% } %>
+            <div id="date"><%= review.createdAt.toString().slice(0, 10)%></div>
+            <div id="name"><%= restaurant.createdBy.name%></div> 
+            <div id="rate"> Rating: <%= review.ratings %></div>
+            <%= review.content %>
+            <hr></hr>
+            <% }) %>
+            <% average = (total/restaurant.reviews.length).toFixed(1) %> 
+            <% } else { %>
+              <h2>No Reviews Yet</h2>
+              <% } %>
+    </div>
+  </div>
 </section>
 <h1 id="restaurant-name"><%= restaurant.name %> <%= average %></h1>
 </main>
