@@ -11,15 +11,15 @@
 <form id="edit-form" action="/restaurants/<%= restaurant._id %>?_method=PUT" method="POST">
   <div>
     <label for="restaurant-input">Restaurant Name:</label>
-    <input type="text" name="name" id="restaurant-input" autocomplete="off" placeholder="<%= restaurant.name %>">
+    <input type="text" name="name" id="restaurant-input" autocomplete="off" value="<%= restaurant.name %>">
   </div>
   <div>
     <label for="location-input">Location:</label>
-    <input type="text" name="location" id="location-input" autocomplete="off" placeholder="<%= restaurant.location%> ">
+    <input type="text" name="location" id="location-input" autocomplete="off" value="<%= restaurant.location%> ">
   </div>
   <div>
     <label for="cuisine-input">Cuisine:</label>
-    <input type="text" name="cuisine" id="cuisine-input" autocomplete="off" placeholder="<%= restaurant.cuisine %>">
+    <input type="text" name="cuisine" id="cuisine-input" autocomplete="off" value="<%= restaurant.cuisine %>">
   </div>
   <div>
     <button type="submit" id="btn">Edit Restaurant</button>
