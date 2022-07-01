@@ -16,8 +16,7 @@ html {
 :root {
   font-size: 62.5%;
   --display: 'Monoton', cursive;
-  --serif: 'Antic Didone', serif;
-  --cursive: 'Shadows Into Light', cursive;
+  --cursive: 'Raleway', sans-serif;
   --beige: #E9Dcc9;
   --brick: #a22c29;
 }
@@ -45,7 +44,7 @@ nav {
 ul {
   list-style: none;
   overflow: hidden;
-  position: sticky;
+  flex-wrap: nowrap;
 }
 
 li {

@@ -29,3 +29,20 @@ button:hover {
   color: black;
 }
 
+table {
+  margin-top: 40px;
+  background-color: rgba(255, 255, 255, 0.65);
+  border-radius: 5px;
+  padding: 10px;
+  color: black;
+  font-size: 20px;
+}
+
+tbody td {
+  text-align: center;
+  padding: 15px;
+}
+
+th {
+  font-size: 25px;
+}
