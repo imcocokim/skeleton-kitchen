@@ -47,15 +47,15 @@
         <% let total = 0 %> 
         <% restaurant.reviews.forEach(review => { %>
           <% total += review.ratings %> 
+          <div id="date"><%= review.createdAt.toString().slice(0, 10)%></div>
+          <div id="name"><%= restaurant.createdBy.name%></div> 
+          <div id="rate"> Rating: <%= review.ratings %></div>
+          <%= review.content %>
           <% if(user.profile._id.equals(review.createdBy._id)) { %> 
             <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-              <button id="delete-btn">Delete</button>
+              <button id="delete-btn" type="submit">Delete</button>
             </form>
             <% } %>
-            <div id="date"><%= review.createdAt.toString().slice(0, 10)%></div>
-            <div id="name"><%= restaurant.createdBy.name%></div> 
-            <div id="rate"> Rating: <%= review.ratings %></div>
-            <%= review.content %>
             <hr></hr>
             <% }) %>
             <% average = (total/restaurant.reviews.length).toFixed(1) %> 

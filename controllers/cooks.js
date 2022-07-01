@@ -69,5 +69,5 @@ export {
   index,
   show,
   edit,
-  update
+  update,
 }

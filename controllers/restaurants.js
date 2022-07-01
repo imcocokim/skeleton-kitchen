@@ -124,17 +124,6 @@ function deleteRev(req, res){
   })
 }
 
-// function editRev(req, res) {
-//   // Find the review by ID
-//   Review.findById(req.params.id)
-//   // push inside of the form
-//   .then(review => {
-//     review.content.push(req.body)
-//   })
-//   // change the button to update review
-//   // update the review
-// }
-
 export {
   index,
   newRes as new,
@@ -145,5 +134,4 @@ export {
   deleteRes as delete,
   createRev, 
   deleteRev,
-  // editRev
 }

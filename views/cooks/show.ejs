@@ -32,7 +32,7 @@
       <% restaurants.forEach(restaurant => { %>
         <div class="date"><%= restaurant.createdAt.toString().slice(0, 10) %></div>
         <%= restaurant.name %> 
-        <%= restaurant.location %> <hr>
+        <%= restaurant.location %> 
       <% }) %> 
     </div>
     <div class="review-list">
@@ -40,7 +40,8 @@
       <% reviews.forEach(review => { %>
         <div class="date"><%= review.createdAt.toString().slice(0, 10) %></div>
         <div class="rate">Rating: <%= review.ratings %></div> 
-        <div><%= review.content %></div><hr>
+        <div><%= review.content %></div>
+          <hr>
         <% }) %> 
     </div>
   </div>

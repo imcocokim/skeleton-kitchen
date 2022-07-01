@@ -31,8 +31,11 @@ table {
 tbody td {
   text-align: center;
   padding: 15px;
+  font-weight: bold;
 }
 
 th {
   font-size: 23px;
+  padding: 5px;
+  font-weight: 900;
 }

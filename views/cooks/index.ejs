@@ -1,25 +1,41 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/restaurants/index.css">
 <%- include('../partials/nav') %>
 
 <main>
   <h1>All Cooks</h1>
-  <% profiles.forEach(profile => { %>
-    <% if (profile.avatar) { %>
-      <img 
-      src="<%= profile.avatar %>" 
-      alt="<%= profile.name %>'s profile"
-      />
-      <% } else { %>
-        <img 
-        src="/images/user.png" 
-        alt="placeholder avatar"
-        >
-        <% } %>
-        <a href="/cooks/<%=profile._id %>"><%= profile.name %></a>
-        <%= profile.location %>
-        <%= profile.years %>  
-  <% }) %>
-
+    <table>
+      <thead>
+        <tr>
+          <th>Avatar</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Experience</th>
+        </tr>
+      </thead>
+    <tbody>
+    <% profiles.forEach(profile => { %>
+      <% if (profile.avatar) { %>
+        <tr>
+        <td><img 
+        src="<%= profile.avatar %>" 
+        alt="<%= profile.name %>'s profile"
+        />
+        <% } else { %>
+          <img 
+          src="/images/user.png" 
+          alt="placeholder avatar"
+          >
+          <% } %></td>
+          <td><a class="name" href="/cooks/<%=profile._id %>"><%= profile.name %></a></td>
+          <td><%= profile.location %></td>
+          <td><%= profile.years %></td>
+          </tr>
+          <% }) %>
+    </tbody>
+  </table>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>
+
