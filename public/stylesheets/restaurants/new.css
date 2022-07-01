@@ -9,7 +9,21 @@ div {
 
 input {
   float: right;
-  border-radius: 5px;
+  /* border-radius: 5px; */
+  margin-left: 10px;
+  background-color:  rgba(255, 255, 255, 0.404);;
+  border: none;
+  height: 30px;
+}
+
+label {
+  font-size: 20px;
+}
+
+::placeholder{
+  font-family: var(--cursive);
+  padding: 4px;
+  font-size: 15px;
 }
 
 button {
@@ -17,5 +31,12 @@ button {
 }
 
 #cancel-btn {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+form {
+  background-color: rgba(255, 255, 255, 0.65);
+  border-radius: 5px;
+  padding: 10px;
+  color: black;
 }

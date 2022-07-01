@@ -31,6 +31,7 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   margin: 0;
   color: white;
+  font-size: 18px;
 }
 
 nav {
@@ -69,4 +70,13 @@ nav ul li a:hover {
 #nav-title{
   margin-left: -50px;
   font-family: var(--display);
+}
+
+a {
+  text-decoration: none;
+  color: var(--brick);
+}
+
+a:hover {
+  color: white;
 }
