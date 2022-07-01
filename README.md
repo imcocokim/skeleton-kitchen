@@ -43,3 +43,6 @@ Users are able to:
 - [ ] Make users anonymous
 - [ ] Have multiple ratings
 - [ ] Edit their own review
+- [ ] User can delete reviews from their profile page
+- [ ] User can delete restaurants from their profile page
+- [ ] Make the website responsive
