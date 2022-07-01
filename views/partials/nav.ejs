@@ -5,19 +5,14 @@
 <body>
   <nav>
     <ul>
-      <li id="nav-title">Skeletons in the Kitchen</li>
-      <li><a href="/">Home</a></li>
-      <li><a href="/restaurants">Restaurants</a></li>
-      <li><a href="/cooks">Cooks</a></li>
       <li><% if (user) { %>
+        <li id="nav-title">Skeletons in the Kitchen</li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/restaurants">Restaurants</a></li>
+        <li><a href="/cooks">Cooks</a></li>
+        <li><a href="/cooks/<%= user.profile._id %>">My Profile</a></li>
         <a href="/auth/logout">
           Logout
-        </a>
-      <% } else { %>
-        <a href="/auth/google" class="siwg-link">
-          <button type="submit" class="siwg">
-            <img id="siwg-image" alt="Sign in with Google" />
-          </button>
         </a>
       <% } %>
     </li>

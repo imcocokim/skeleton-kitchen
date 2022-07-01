@@ -1,19 +1,26 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/restaurants/show.css">
 <%- include('../partials/nav') %>
 
 <main>
   <% let average %> 
 <% if (isSelf) { %>
-  <form action="/restaurants/<%= restaurant._id %>/edit" method="GET">
-  <button type="submit" class="btn">Edit</button></form>
-
-  <form action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
-  <button type="submit" class="btn">Delete</button></form>
+  <div class="flex-container">
+    <div>
+      <form action="/restaurants/<%= restaurant._id %>/edit" method="GET">
+        <button type="submit" class="btn">Edit</button>
+      </form>
+    </div>
+    <div>
+      <form action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
+        <button type="submit" class="btn2">Delete</button>
+      </form> 
+    </div>
+  </div>
   
 <% } %>
-<h2><%= restaurant.name %> </h2>
-<h2><%= restaurant.location %> </h2>
-<h2><%= restaurant.cuisine %> </h2>
+<h2 id="res-loc"><%= restaurant.location %> </h2>
+<h2 id="res-cuisine"><%= restaurant.cuisine %> </h2>
 <section>
   <form 
   action="/restaurants/<%= restaurant._id %>/reviews"

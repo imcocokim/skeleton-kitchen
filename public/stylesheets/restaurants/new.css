@@ -4,13 +4,12 @@ body {
 
 div {
   display: block;
-  margin: 10px;
+  margin: 30px;
 }
 
 input {
   float: right;
-  /* border-radius: 5px; */
-  margin-left: 10px;
+  margin-left: 30px;
   background-color:  rgba(255, 255, 255, 0.404);;
   border: none;
   height: 30px;
@@ -37,6 +36,6 @@ button {
 form {
   background-color: rgba(255, 255, 255, 0.65);
   border-radius: 5px;
-  padding: 10px;
+  padding: 20px;
   color: black;
 }

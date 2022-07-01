@@ -6,9 +6,15 @@
   <h2>Welcome to</h2>
   <h1>Skeletons in the Kitchen</h1>
   <div>
-   <h3>Get insights on a restaurant's culture from fellow cooks so you know if it's worth trailing there for your next job!</h3>
+    <h3>Get insights on a restaurant's culture from fellow cooks so you know if it's worth trailing there for your next job!</h3>
   </div>
-
+  <% if (user) { %>
+    <a href="/auth/logout">
+      <button>Logout</button>
+    </a>
+  <% } else {%>
+  <a href="/auth/google"><button>Enter Here</button></a>
+  <% } %> 
 
 </main>
 

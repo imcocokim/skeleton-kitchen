@@ -38,7 +38,7 @@ nav {
   display: flex;
   justify-content: left;  
   font-family: var(--cursive);
-  margin: 0 20px;
+  margin: 0 20px 0 0;
 }
 
 ul {
@@ -51,15 +51,14 @@ li {
   color: black;
   text-decoration: none;
   float: left;
-  margin: 0 20px 0;
   color: white;
-  padding: 10px;
+  /* padding: 5px; */
 }
 
 nav ul li a {
   text-decoration: none;
   color: white;
-  padding: 10px;
+  padding: 30px;
 }
 
 nav ul li a:hover {
@@ -67,7 +66,7 @@ nav ul li a:hover {
 }
 
 #nav-title{
-  margin-left: -50px;
+  margin-left: 5px;
   font-family: var(--display);
 }
 
@@ -77,5 +76,15 @@ a {
 }
 
 a:hover {
+  color: white;
+}
+
+button {
+  font-family: var(--cursive);
+  background-color: var(--brick);
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  font-size: 15px;
   color: white;
 }
