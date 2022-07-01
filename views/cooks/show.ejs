@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/restaurants/show.css">
+<link rel="stylesheet" href="/stylesheets/cooks/show.css">
 <%- include('../partials/nav') %>
 
 <main>
@@ -21,24 +21,28 @@
     method="GET" 
     style="display: inline-block;"
     >
-      <button>Edit My Info</button>
+      <button class="btn">Edit My Info</button>
     </form>
     <% } %>  
-  <h2><%= profile.location %> </h2>
-  <h2><%= profile.years %> </h2>
-  <div id="restaurant-list">
-    <% restaurants.forEach(restaurant => { %>
-      <%= restaurant.createdAt.toString().slice(0, 10) %> 
-      <%= restaurant.name %> 
-      <%= restaurant.location %> 
-    <% }) %> 
-  </div>
-  <div id="review-list">
-    <% reviews.forEach(review => { %>
-      <%= review.createdAt.toString().slice(0, 10) %> 
-      <%= review.content %> 
-      <%= review.ratings %> 
-    <% }) %> 
+  <h2 class="location"><%= profile.location %> </h2>
+  <h2 class="years"><%= profile.years %> </h2>
+  <div class="container">
+    <div class="restaurant-list">
+      <h2>Restaurants Added:</h2>
+      <% restaurants.forEach(restaurant => { %>
+        <div class="date"><%= restaurant.createdAt.toString().slice(0, 10) %></div>
+        <%= restaurant.name %> 
+        <%= restaurant.location %> <hr>
+      <% }) %> 
+    </div>
+    <div class="review-list">
+      <h2>Restaurants Reviewed:</h2>
+      <% reviews.forEach(review => { %>
+        <div class="date"><%= review.createdAt.toString().slice(0, 10) %></div>
+        <div class="rate">Rating: <%= review.ratings %></div> 
+        <div><%= review.content %></div><hr>
+        <% }) %> 
+    </div>
   </div>
 
 
