@@ -44,7 +44,7 @@ function show(req, res) {
   .populate('createdBy')
   .populate({
     path: 'reviews', 
-    poulate: {path: 'createdBy'}
+    populate: {path: 'createdBy'}
   })
   .then(restaurant => {
     const isSelf = restaurant.createdBy._id.equals(req.user.profile._id)

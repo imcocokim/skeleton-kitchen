@@ -48,7 +48,7 @@
         <% restaurant.reviews.forEach(review => { %>
           <% total += review.ratings %> 
           <div id="date"><%= review.createdAt.toString().slice(0, 10)%></div>
-          <div id="name"><%= restaurant.createdBy.name%></div> 
+          <div id="name"><%= review.createdBy.name%></div> 
           <div id="rate"> Rating: <%= review.ratings %></div>
           <%= review.content %>
           <% if(user.profile._id.equals(review.createdBy._id)) { %> 
