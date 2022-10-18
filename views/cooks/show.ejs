@@ -29,21 +29,29 @@
   <div class="container">
     <div class="restaurant-list">
       <h2>Restaurants Added:</h2>
-      <% restaurants.forEach(restaurant => { %>
-        <div class="date"><%= restaurant.createdAt.toString().slice(0, 10) %></div>
-        <%= restaurant.name %> 
-        <%= restaurant.location %> 
-      <% }) %> 
+      <% if (restaurants.length) { %>
+        <% restaurants.forEach(restaurant => { %>
+          <div class="date"><%= restaurant.createdAt.toString().slice(0, 10) %></div>
+          <%= restaurant.name %> 
+          <%= restaurant.location %> 
+        <% }) %> 
+      <% } else { %>
+        <p>No restaurants have been added</p>
+        <% } %>
     </div>
     <div class="review-list">
       <h2>Restaurants Reviewed:</h2>
-      <% reviews.forEach(review => { %>
-        <div class="date"><%= review.createdAt.toString().slice(0, 10) %></div>
-        <div class="restaurant"><%= review.restaurant.name %></div> 
-        <div class="rate">Rating: <%= review.ratings %></div> 
-        <div>Review: <%= review.content %></div>
-          <hr>
-        <% }) %> 
+      <% if (reviews.length) { %>
+        <% reviews.forEach(review => { %>
+          <div class="date"><%= review.createdAt.toString().slice(0, 10) %></div>
+          <div class="restaurant"><%= review.restaurant.name %></div> 
+          <div class="rate">Rating: <%= review.ratings %></div> 
+          <div>Review: <%= review.content %></div>
+            <hr>
+          <% }) %> 
+      <% } else { %>
+        <p>No reviews have been added</p>
+        <% } %>
     </div>
   </div>
 
