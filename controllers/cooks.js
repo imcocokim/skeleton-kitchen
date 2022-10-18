@@ -22,6 +22,7 @@ function show(req, res){
     Restaurant.find({createdBy: profile._id})
     .then(restaurants => {
       Review.find({createdBy: profile._id})
+      .populate('restaurant')
       .then(reviews => {
         const isSelf = profile._id.equals(req.user.profile._id)
         res.render('cooks/show', {

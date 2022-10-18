@@ -38,7 +38,8 @@
     <div class="review-list">
       <h2>Restaurants Reviewed:</h2>
       <% reviews.forEach(review => { %>
-        <div class="date"><%= review.createdAt.toString().slice(0, 10) %></div>
+        <div><%= review.createdAt.toString().slice(0, 10) %></div>
+        <div class="rate"><%= review.restaurant.name %></div> 
         <div class="rate">Rating: <%= review.ratings %></div> 
         <div><%= review.content %></div>
           <hr>
