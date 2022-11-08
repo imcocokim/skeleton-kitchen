@@ -86,8 +86,11 @@ function update(req, res){
 }
 
 function deleteRes(req, res){
-  Restaurant.findByIdAndDelete(req.params.id)
+  Restaurant.findById(req.params.id)
+  .populate('reviews')
   .then(restaurant => {
+    // db.collection.update({}, { $set: {'reviews': []}}, {multi:true})
+    restaurant.remove()
     res.redirect('/restaurants')
   })
   .catch(err => {

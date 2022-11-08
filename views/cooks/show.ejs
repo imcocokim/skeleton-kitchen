@@ -44,7 +44,7 @@
       <% if (reviews.length) { %>
         <% reviews.forEach(review => { %>
           <div class="date"><%= review.createdAt.toString().slice(0, 10) %></div>
-          <div class="restaurant"><%= review.restaurant.name %></div> 
+          <!-- <div class="restaurant"></%= review.restaurant.name %></div>  -->
           <div class="rate">Rating: <%= review.ratings %></div> 
           <div>Review: <%= review.content %></div>
             <hr>
