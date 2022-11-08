@@ -26,3 +26,4 @@ export {
   Restaurant
 }
 
+// CASCADE DELETION: https://stackoverflow.com/questions/14348516/cascade-style-delete-in-mongoose
